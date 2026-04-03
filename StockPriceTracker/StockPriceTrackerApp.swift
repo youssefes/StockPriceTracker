@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct StockPriceTrackerApp: App {
+    @StateObject var coordinator = AppCoordinator()
     var body: some Scene {
         WindowGroup {
             ContentView()
+        }
+    }
+    
+    struct RootView: View {
+        @StateObject private var coordinator = AppCoordinator()
+        var body: some View {
+            NavigationStack(path: $coordinator.path) {
+                ContentView()
+                    .CoordinatorDestination()
+            }
+            .environmentObject(coordinator)
         }
     }
 }
