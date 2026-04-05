@@ -38,7 +38,7 @@ struct BaseView<Content>: View where Content: View {
                 Spacer()
             }
         }
-        .background(DesignSystem.Colors.background.color)
+        .background(DesignSystem.Colors.main.color)
         .onChange(of: state) { oldState, newState  in
             if case let .failed(error) = newState {
                 errorMessage = error.localizedDescription

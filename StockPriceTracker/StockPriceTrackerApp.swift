@@ -12,7 +12,7 @@ struct StockPriceTrackerApp: App {
     @StateObject var coordinator = AppCoordinator()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
     
@@ -20,7 +20,7 @@ struct StockPriceTrackerApp: App {
         @StateObject private var coordinator = AppCoordinator()
         var body: some View {
             NavigationStack(path: $coordinator.path) {
-                ContentView()
+                StockListView()
                     .CoordinatorDestination()
             }
             .environmentObject(coordinator)

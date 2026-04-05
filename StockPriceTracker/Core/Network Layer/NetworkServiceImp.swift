@@ -24,7 +24,7 @@ final class NetworkServiceImplementation: NetworkService {
         self.jsonEncoder = encoder
     }
 
-    func request<T: Decodable>(_ endpoint: Endpoint, responseType: T.Type) async throws -> T {
+    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
         // Build URL
         guard let baseURL = baseURL else {
             throw NetworkError.invalidURL

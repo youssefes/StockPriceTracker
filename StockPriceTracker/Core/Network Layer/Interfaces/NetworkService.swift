@@ -8,5 +8,5 @@
 // MARK: - Network Service Protocol
 
 protocol NetworkService {
-    func request<T: Decodable>(_ endpoint: Endpoint, responseType: T.Type) async throws -> T
+    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T
 }

@@ -13,7 +13,7 @@ extension View {
         self.navigationDestination(for: AppScreens.self) { Screen in
             switch Screen {
             case .start:
-                ContentView()
+                StockListView()
             }
         }
     }
